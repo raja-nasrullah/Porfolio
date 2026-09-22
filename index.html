@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nasr | Full-Stack Developer & Ai Engineer</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon1.png">
+    <link rel="apple-touch-icon" href="favicon1.png">
     
     <!-- Fonts (URL typo fixed) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -289,17 +289,37 @@
         .globe {
             position: absolute; width: 100%; height: 100%;
             border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, var(--shadow-blue), rgba(5,5,17,.8));
-            box-shadow: 0 0 40px var(--shadow-blue), inset 0 0 30px var(--shadow-blue);
+            background:
+                radial-gradient(circle at 30% 28%, rgba(255,255,255,.25), transparent 40%),
+                radial-gradient(circle at 65% 70%, rgba(0,0,0,.55), transparent 60%),
+                radial-gradient(circle at 32% 30%, var(--shadow-blue), rgba(5,5,17,.9) 75%);
+            box-shadow:
+                inset -18px -18px 36px rgba(0,0,0,.55),
+                inset 12px 12px 24px var(--shadow-blue),
+                0 0 40px var(--shadow-blue);
             border: 1px solid var(--neon-blue);
         }
+
+        .globe-highlight {
+            position: absolute; top: 10%; left: 14%;
+            width: 30%; height: 30%; border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,.45), transparent 70%);
+            filter: blur(3px);
+            pointer-events: none;
+        }
+
         .globe-grid {
             position: absolute; width: 100%; height: 100%;
             border-radius: 50%; border: 1px solid var(--shadow-blue);
             box-sizing: border-box; transform-style: preserve-3d;
+            opacity: .6;
         }
         .grid-2 { transform: rotateY(60deg); }
         .grid-3 { transform: rotateY(120deg); }
+
+        .grid-lat { opacity: .35; }
+        .lat-1 { transform: rotateX(90deg) scale(.75); }
+        .lat-2 { transform: rotateX(90deg) scale(.42); }
 
         .floating-tag, .code-window {
             position: absolute; background: rgba(15,17,35,.85);
@@ -408,6 +428,7 @@
         }
         .portrait-inner img {
             width: 100%; height: 100%; object-fit: cover;
+            object-position: center 15%;
             opacity: 1; transition: var(--transition);
         }
         .portrait-container:hover .portrait-inner img { transform: scale(1.02); }
@@ -813,11 +834,13 @@
                     <div class="glow-ring ring-2"></div>
                     
                     <div class="globe-container">
-                        <div class="globe">
-                            <div class="globe-grid"></div>
-                            <div class="globe-grid grid-2"></div>
-                            <div class="globe-grid grid-3"></div>
-                        </div>
+                        <div class="globe"></div>
+                        <div class="globe-highlight"></div>
+                        <div class="globe-grid"></div>
+                        <div class="globe-grid grid-2"></div>
+                        <div class="globe-grid grid-3"></div>
+                        <div class="globe-grid grid-lat lat-1"></div>
+                        <div class="globe-grid grid-lat lat-2"></div>
                     </div>
 
                     <div class="floating-tag tag-react">React</div>
@@ -1133,17 +1156,9 @@
     <!-- FOOTER -->
     <footer>
         <div class="container footer-content">
-            <div class="logo" style="font-size: 1.1rem;">Nasr</div>
-            <div class="footer-links">
-                <a href="#services">Services</a>
-                <a href="#projects">Projects</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
             <div class="copyright">
                 © 2024 Nasr. All rights reserved.
             </div>
-        </div>
     </footer>
 
     <!-- LIGHTBOX MODAL -->
@@ -1325,6 +1340,7 @@
                 closeLightbox();
             }
         });
+        
     </script>
 </body>
 </html>
