@@ -200,12 +200,14 @@
         .swatch-mint   { background: #34d399; color: #34d399; }
         .swatch-pink   { background: #f472b6; color: #f472b6; }
 
-        .nav-actions button.btn-hire {
-            padding: 8px 20px; border-radius: 50px; font-size: .85rem; font-weight: 600;
-            background: linear-gradient(90deg, var(--neon-gold), var(--neon-blue));
-            border: none; color: var(--btn-text); transition: var(--transition);
-            cursor: pointer; white-space: nowrap;
-        }
+        .nav-actions .btn-hire {
+        display: inline-flex; align-items: center; justify-content: center;
+        padding: 8px 20px; border-radius: 50px; font-size: .85rem; font-weight: 600;
+        background: linear-gradient(90deg, var(--neon-gold), var(--neon-blue));
+        border: none; color: var(--btn-text); transition: var(--transition);
+        cursor: pointer; white-space: nowrap;
+    }
+    .nav-actions .btn-hire:hover { opacity: .9; }
         .nav-actions button.btn-hire:hover { opacity: .9; }
 
         .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--text-main); }
@@ -625,7 +627,7 @@
         /* Small tablet */
         @media (max-width: 900px) {
             .nav-links { gap: 20px; }
-            .nav-actions button.btn-hire { padding: 8px 16px; font-size: .8rem; }
+            .nav-actions .btn-hire { padding: 8px 16px; font-size: .8rem; }
         }
 
         /* Mobile */
@@ -756,7 +758,7 @@
     <nav id="navbar">
         <div class="container">
             <div class="nav-container">
-                <div class="logo">Nasr</div>
+                <a href="#" class="logo" aria-label="Back to top">Nasr</a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#services">Services</a></li>
                     <li><a href="#projects">Projects</a></li>
@@ -793,7 +795,7 @@
                         </div>
                     </div>
 
-                    <button class="btn-hire">Hire Me</button>
+                    <a href="#contact" class="btn-hire">Hire Me</a>
                 </div>
                 <div class="menu-toggle" id="menuToggle" aria-label="Toggle Menu" role="button" tabindex="0">
                     <i class="fa-solid fa-bars"></i>
